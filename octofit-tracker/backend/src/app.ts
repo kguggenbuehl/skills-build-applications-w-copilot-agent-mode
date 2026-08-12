@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import Activity from './models/Activity.js';
 import Leaderboard from './models/Leaderboard.js';
@@ -18,6 +19,7 @@ const sendBadId = (res: express.Response) => {
   res.status(400).json({ error: 'Invalid MongoDB ObjectId format' });
 };
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => {
