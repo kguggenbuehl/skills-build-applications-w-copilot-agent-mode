@@ -11,7 +11,7 @@ const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/o
  * Seed the octofit_db database with test data
  */
 async function seedDatabase() {
-  try {
+  try {  
     await mongoose.connect(connectionString);
 
     console.log('Connected to octofit_db');
@@ -27,7 +27,7 @@ async function seedDatabase() {
 
     const teams = await Team.insertMany([
       {
-        name: 'Alpine Pacers',
+        name: 'Alpine Pacers2',
         city: 'Zurich',
         captain: 'Lena Graf',
         totalPoints: 0,
